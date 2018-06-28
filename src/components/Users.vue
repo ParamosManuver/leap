@@ -15,7 +15,9 @@
             <!-- Bind to class contacted -->
             <span :class="{contacted: user.contacted}">
               {{user.name}} : {{user.email}}
+              
             </span>
+            <button v-on:click="deleteUser(user)">X</button>
           </li>
         </ul>
     </div>
@@ -58,6 +60,9 @@ export default {
         contacted: false
       });
       event.preventDefault();
+      },
+      deleteUser: function (user) {
+        this.users.splice(this.users.indexOf(user),1)
       }
     }
   }
