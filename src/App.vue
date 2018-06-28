@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <test></test>
+    <test msg='Hello im a computed component'></test>
   </div>
 </template>
 

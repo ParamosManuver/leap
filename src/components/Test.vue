@@ -34,12 +34,20 @@
         <label for="">Last Name</label>
         <input type="text" v-model="user.last_name">
         <h3> {{fullname}} </h3>
+        <!-- Computed components -->
+        <h2> {{msg}} </h2>
     </div>
 </template>
 
 <script>
 export default {
   name: 'Test',
+  props :{
+      msg:{
+          type: String,
+          default: 'foobar'
+      }
+  },
   data(){
       return{
           title: 'Hello World',
