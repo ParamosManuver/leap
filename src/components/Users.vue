@@ -9,7 +9,25 @@ export default {
   name: "Users",
 
   data() {
-    return {};
+    return {
+      users: [
+        {
+          name: 'Marquez Brownlee',
+          email: 'marquez@mkbhd.com',
+          contacted: false
+        },
+        {
+          name: 'Linus Sebastian',
+          email: 'linus@ltt.com',
+          contacted: false
+        },
+        {
+          name: 'Lewis Hilsenger',
+          email: 'lew@unboxtherapy.com',
+          contacted: false
+        }
+      ]
+    };
   }
 };
 </script>
