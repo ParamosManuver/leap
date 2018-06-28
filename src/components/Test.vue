@@ -19,6 +19,9 @@
 
         <!-- Input Binding -->
         <input type="text" v-model="title"><br>
+
+        <!-- Events -->
+        <button v-on:click="greet('moses')">Greet</button>
     </div>
 </template>
 
@@ -39,6 +42,11 @@ export default {
               {title: 'Item Two'},
               {title: 'Item Three'}
           ]
+      }
+  },
+  methods: {
+      greet: function(g_name) {
+          alert('Hello, My name is '+g_name)
       }
   }
 };
