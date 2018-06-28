@@ -1,18 +1,19 @@
 <template>
   <div id="app">
-    <test msg='Hello im a computed component'></test>
+    <users></users>
   </div>
 </template>
 
 <script>
 import Test from './components/Test';
+import Users from './components/Users';
 
 // Export defaullt component with name App
 export default {
   name: 'App',
   // Include other components
   components: {
-    Test
+    Test, Users
   }
 }
 </script>
