@@ -25,6 +25,15 @@
         <br>
         <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="enterHit">
         <!-- Other Modifiers Shift, Tab .. -->
+
+        <!-- Computed Properties -->
+        <hr>
+        <label for="">First Name</label>
+        <input type="text" v-model="user.first_name">
+        <br>
+        <label for="">Last Name</label>
+        <input type="text" v-model="user.last_name">
+        <h3> {{fullname}} </h3>
     </div>
 </template>
 
@@ -57,6 +66,11 @@ export default {
      enterHit: function(params) {
          console.log('You hit enter');
      }
+  },
+  computed: {
+      fullname : function () {
+          return this.user.first_name+ ' '+ this.user.last_name
+      }
   }
 };
 </script>
