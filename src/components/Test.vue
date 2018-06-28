@@ -9,7 +9,16 @@
         <!-- Unparsed -->
         {{day}} 
         <!-- Parsed -->
+        
         <span v-html="day"></span>
+
+        <!-- For loops -->
+        <ul>
+            <li v-for="Item in items"> {{Item.title}} </li>
+        </ul>
+
+        <!-- Input Binding -->
+        <input type="text" v-model="title"><br>
     </div>
 </template>
 
@@ -24,7 +33,12 @@ export default {
               first_name: 'Jake',
               last_name: 'Archibald'
           },
-          showName: false
+          showName: false,
+          items:  [
+              {title: 'Item One'},
+              {title: 'Item Two'},
+              {title: 'Item Three'}
+          ]
       }
   }
 };
