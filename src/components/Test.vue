@@ -22,6 +22,9 @@
 
         <!-- Events -->
         <button v-on:click="greet('moses')">Greet</button>
+        <br>
+        <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="enterHit">
+        <!-- Other Modifiers Shift, Tab .. -->
     </div>
 </template>
 
@@ -47,7 +50,13 @@ export default {
   methods: {
       greet: function(g_name) {
           alert('Hello, My name is '+g_name)
-      }
+      },
+      pressKey: function(event) {
+      console.log(event.target.value);
+     },
+     enterHit: function(params) {
+         console.log('You hit enter');
+     }
   }
 };
 </script>
