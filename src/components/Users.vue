@@ -1,6 +1,21 @@
 <template>
     <div class="users">
         <h1>Hello, my name is human</h1>
+        <form v-on:submit="addUser">
+          <input type="text" v-model="newUser.name" placeholder="Enter Name">
+          <br>
+          <input type="text" v-model="newUser.email" placeholder="Enter Email">
+          <br>
+          <input type="submit" value="Submit">
+        </form>
+        
+        <ul>
+          <li v-for="user in users">
+            <span>
+              {{user.name}} : {{user.email}}
+            </span>
+          </li>
+        </ul>
     </div>
 </template>
 
@@ -10,6 +25,9 @@ export default {
 
   data() {
     return {
+      newUser: {
+
+      },
       users: [
         {
           name: 'Marquez Brownlee',
@@ -27,9 +45,20 @@ export default {
           contacted: false
         }
       ]
-    };
+    }
+  },
+
+    methods: {
+    addUser: function(event){
+      this.users.push({
+        name: this.newUser.name,
+        email: this.newUser.email,
+        contacted: false
+      });
+      event.preventDefault();
+      }
+    }
   }
-};
 </script>
 
 <style scoped>
