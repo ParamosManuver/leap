@@ -1,6 +1,7 @@
 <template>
     <div class="users">
         <h1>Hello, my name is human</h1>
+        <h2>What is yours ?</h2>
         <form v-on:submit="addUser">
           <input type="text" v-model="newUser.name" placeholder="Enter Name">
           <br>
