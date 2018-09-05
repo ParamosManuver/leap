@@ -2,12 +2,12 @@
     <div class="users">
         <h1>Hello, my name is human</h1>
         <h2>What is yours ?</h2>
-        <form v-on:submit="addUser">
-          <input type="text" v-model="newUser.name" placeholder="Enter Name">
+        <form class="form-group" v-on:submit="addUser">
+          <input class="form-control f-text" type="text" v-model="newUser.name" placeholder="Enter Name">
           <br>
-          <input type="text" v-model="newUser.email" placeholder="Enter Email">
+          <input class="form-control f-text" type="text" v-model="newUser.email" placeholder="Enter Email">
           <br>
-          <input type="submit" value="Submit">
+          <input type="submit" class="btn btn-primary mt-3" value="Submit">
         </form>
         
         <ul>
@@ -18,7 +18,7 @@
               {{user.name}} : {{user.email}}
               
             </span>
-            <button v-on:click="deleteUser(user)">X</button>
+            <button class="btn btn-danger" v-on:click="deleteUser(user)">X</button>
           </li>
         </ul>
     </div>
@@ -72,5 +72,9 @@ export default {
 <style scoped>
   .contacted{
     text-decoration: line-through;
+  }
+  .form-group .f-text{
+      width: 400px;
+      align-items: center;
   }
 </style>
